@@ -1,0 +1,70 @@
+<head>
+  <title>Reasons We Hate Matt</title>
+</head>
+
+<body>
+  <nav class='navbar navbar-default' role="navigation">
+    <div class='container-fluid'>
+      <div class='navbar-header'>
+        <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1'>
+          <span class='sr.only'>Toggle Navigation
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </span>
+        </button>
+        <a class='navbar-brand' id='bs-example-navbar-collapse-1'>Reasons We Hate Matt</a>
+      </div><!-- /navbar-header -->
+      <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+        <ul class='nav navbar-nav'>
+          <li class='active'><a href='/'> Home </a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class='row'>
+    <div class='col-lg-4 col-lg-offset-4'>
+      <div class='panel panel-primary'>
+        <div class='panel-heading'>
+          {{> header }}
+        </div>
+        <ul class='list-group'>
+          {{> reasons}}
+        </ul>
+        <div class='panel-footer'>
+          {{> newReason}}
+        </div>
+      </div><!-- / panel -->
+    </div>
+  </div>
+
+
+</body>
+
+<template name='header'>
+  <h1>{{heading}}</h1>
+</template>
+
+<template name="reasons">
+  {{#each reasons}}
+  <li class='list-group-item' id='{{_id}}'>
+      <h3>
+        {{reason}}
+        <span class='pull-right remove'>
+          <button class='destroy'></button>
+        </span>
+
+      </h3>
+    </li>
+  {{else}}
+    <li class='list-group-item'>
+      <center><h3><i>No Reasons</i></h3></center>
+    </li>
+  {{/each}}
+</template>
+
+<template name="newReason">
+  <input type='text' id='newReason' class='input-lg' placeholder='add a reason' name='newReason'>
+</template>
+
