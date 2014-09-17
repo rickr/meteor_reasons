@@ -4,7 +4,7 @@ if (Meteor.isClient)
   Template.header.heading = ->
     count = Reasons.find().count()
     reason_string = " Reason"
-    reason_string += "s" if count > 1 and count != 0
+    reason_string += "s" if count > 1 or count != 0
     return count + reason_string
 
   Template.reasons.reasons = ->
